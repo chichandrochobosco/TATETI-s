@@ -1,0 +1,40 @@
+/*button{
+    width: 300px;
+    height: 300px;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 600px;
+    
+}*/
+body{
+    user-select: none;
+}
+#container{
+    display: grid;
+    grid-template-columns: repeat(3, 0fr);
+    justify-content: center;
+}
+
+.cuadrado{
+    height: 200px;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+    font-size: 8rem;
+    font-weight: bold;
+}
+
+.medio{
+    border-left: 10px solid ;
+    border-right: 10px solid;
+}
+.arriba{
+    border-bottom: 10px solid;
+
+}
+.abajo{
+    border-top: 10px solid;
+}
+
