@@ -9,11 +9,18 @@ const cuadrados = document.querySelectorAll(".cuadrado");
 
 cuadrados.forEach((cuadrado, i) => {
     cuadrado.addEventListener("click", ()=>{
-        console.log("cuadrado")
+        if(estadoJuego === "pausa") return;
+        if(cuadrado.textContent !== "") return;
         cuadrado.innerText = estadoJuego === "P1" ? x : o;
         estadoJuego = estadoJuego === "P1" ? "P2" : "P1";
-        revisarSiHayGanador()
-
+        const posicionGanadora = revisarSiHayGanador();
+        if(typeof posicionGanadora === "object"){
+            ganar(posicionGanadora);
+            return;
+        }
+        if(posicionGanadora === "empate"){
+            console.log("empate")
+        }
     })
 
 }   )
@@ -28,7 +35,7 @@ function revisarSiHayGanador(){
         if( tablero[i] &&
             tablero[i] === tablero[i+1] &&
             tablero[i] === tablero[i+2] ){
-                console.log("ganamos")
+                return [i, i+1, i+2];
             }
     }
 
@@ -37,7 +44,7 @@ function revisarSiHayGanador(){
         if( tablero[i] &&
             tablero[i] === tablero[i+3] &&
             tablero[i] === tablero[i+6] ){
-                console.log("ganamos")
+                return [i, i+3, i+6];
             }
     }
 
@@ -45,12 +52,21 @@ function revisarSiHayGanador(){
     if( tablero[0] &&
         tablero[0] === tablero[4] &&
         tablero[0] === tablero[8] ){
-            console.log("ganamos")
+            return [0, 4, 8];
         }
     if( tablero[2] &&
         tablero[2] === tablero[4] &&
         tablero[2] === tablero[6] ){
-            console.log("ganamos")
+            return [2, 4, 6];
         }
+    if(tablero.includes("")) return false;
+    return "empate";
+}
 
+function ganar(posicionGanadora){
+    console.log("Ganador", posicionGanadora)
+    estadoJuego = "pausa";
+    posicionGanadora.forEach(posicion => {
+        cuadrados[posicion].classList.toggle("ganador", true);
+    })
 }

@@ -9,6 +9,7 @@
     
 }*/
 body{
+    background-color: antiquewhite;
     user-select: none;
 }
 #container{
@@ -38,3 +39,6 @@ body{
     border-top: 10px solid;
 }
 
+.ganador{
+    background-color: aqua;
+}
