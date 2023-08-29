@@ -12,12 +12,34 @@ body{
     background-color: antiquewhite;
     user-select: none;
 }
+
+h1{
+    font-size: 50px;
+   font-family: verdana ;
+   
+}
+.centrarImg{
+    display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+}
+img{
+    width: 600px;
+    border-width: 5px;
+    border-radius: 5%;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    justify-content: center;
+}
 #container{
     display: grid;
     grid-template-columns: repeat(3, 0fr);
     justify-content: center;
 }
 
+p{
+    font-family: Verdana;
+}
 .cuadrado{
     height: 200px;
     width: 200px;
