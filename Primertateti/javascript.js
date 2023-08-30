@@ -1,5 +1,3 @@
-//document.querySelectorAll("button").forEach(obj => obj.addEventListener("click", btnPulsado));
-
 
 const x = "X";
 const o = "O";
@@ -61,6 +59,7 @@ function revisarSiHayGanador(){
         }
     if(tablero.includes("")) return false;
     return "empate";
+    
 }
 
 function ganar(posicionGanadora){
@@ -70,3 +69,4 @@ function ganar(posicionGanadora){
         cuadrados[posicion].classList.toggle("ganador", true);
     })
 }
+
