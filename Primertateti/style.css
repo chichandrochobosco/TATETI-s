@@ -9,7 +9,7 @@
     
 }*/
 body{
-    background-color: antiquewhite;
+    background-color:bisque;
     user-select: none;
 }
 
@@ -19,7 +19,7 @@ h1{
    
 }
 .centrarImg{
-    display: flex;
+  display: flex;
   justify-content: center; /* Centrado horizontal */
   align-items: center; /* Centrado vertical */
 }
@@ -43,10 +43,12 @@ p{
 .cuadrado{
     height: 200px;
     width: 200px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 8rem;
+    font-size: 7rem;
     font-weight: bold;
+    font-family: Verdana;
 }
 
 .medio{
@@ -62,5 +64,5 @@ p{
 }
 
 .ganador{
-    background-color: aqua;
+    background-color: rgb(38, 20, 201);
 }
