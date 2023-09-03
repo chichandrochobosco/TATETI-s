@@ -2,29 +2,32 @@
 const x = "X";
 const o = "O";
 let estadoJuego = "P1";
+const modal = document.querySelector("dialog");
+const textoModal = modal.querySelector("h2");
 
-const cuadrados = document.querySelectorAll(".cuadrado");
+const cuadrados = Array.from(document.querySelectorAll(".cuadrado"));
 
 cuadrados.forEach((cuadrado, i) => {
     cuadrado.addEventListener("click", ()=>{
         if(estadoJuego === "pausa") return;
         if(cuadrado.textContent !== "") return;
         cuadrado.innerText = estadoJuego === "P1" ? x : o;
-        estadoJuego = estadoJuego === "P1" ? "P2" : "P1";
+        
         const posicionGanadora = revisarSiHayGanador();
         if(typeof posicionGanadora === "object"){
             ganar(posicionGanadora);
             return;
         }
         if(posicionGanadora === "empate"){
-            console.log("empate")
+            mostrarModal("empate");
         }
+        estadoJuego = estadoJuego === "P1" ? "P2" : "P1";
     })
 
 }   )
 
 function revisarSiHayGanador(){
-    const tablero = Array.from(cuadrados).map(cuadrado => cuadrado.textContent);
+    const tablero = cuadrados.map(cuadrado => cuadrado.textContent);
     console.log(tablero)
 
 
@@ -64,9 +67,26 @@ function revisarSiHayGanador(){
 
 function ganar(posicionGanadora){
     console.log("Ganador", posicionGanadora)
-    estadoJuego = "pausa";
+    
     posicionGanadora.forEach(posicion => {
         cuadrados[posicion].classList.toggle("ganador", true);
     })
+    mostrarModal("Ganador: "+estadoJuego)
+    estadoJuego = "pausa";
+    
 }
 
+function mostrarModal(texto){
+    textoModal.innerText = texto;
+    modal.showModal();
+}
+
+modal.querySelector("button").addEventListener("click",() => {
+    cuadrados.forEach(cuadrado => {
+        cuadrado.textContent = "";
+        cuadrado.classList.toggle("ganador", false);
+        modal.close();
+        estadoJuego = "P1";
+    });
+
+})
