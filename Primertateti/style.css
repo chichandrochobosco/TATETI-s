@@ -66,3 +66,15 @@ p{
 .ganador{   
     background-color: rgb(5, 19, 97);
 }
+
+dialog{
+    text-align: center;
+    font-family: verdana ;
+    /*min-width: 30vw;*/
+    background-color:blanchedalmond;
+    border: unset;
+    border-radius: 15%
+    
+    
+
+}
