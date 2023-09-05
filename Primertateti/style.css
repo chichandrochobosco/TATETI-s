@@ -27,7 +27,7 @@ img{
 }
 #container{
     display: grid;
-    grid-template-columns: repeat(3, 0fr);
+    grid-template-columns: repeat(3, 0fr); /*tres columnas, cada una con un ancho de 0 fracciones (fr), ocupan todo el espacio del contenedor*/
     justify-content: center;
 }
 
@@ -42,24 +42,24 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 7rem;
-    font-weight: bold;
+    font-size: 7rem; /*tamaño*/
+    font-weight: bold; /*grosor tipo negrita*/
     font-family: cursive;
     color: aliceblue ;
 }
 
 .medio{
     border-left: 10px solid ;
-    border-right: 10px solid;
+    border-right: 10px solid; 
     border-color:aliceblue;
 }
 .arriba{
-    border-bottom: 10px solid;
+    border-bottom: 10px solid; /*abajo*/
     border-color:aliceblue;
 
 }
 .abajo{
-    border-top: 10px solid;
+    border-top: 10px solid; /*arriba*/
     border-color:aliceblue;
 }
 
@@ -70,7 +70,6 @@ p{
 dialog{
     text-align: center;
     font-family: verdana ;
-    /*min-width: 30vw;*/
     background-color:blanchedalmond;
     border: unset;
     border-radius: 15%
