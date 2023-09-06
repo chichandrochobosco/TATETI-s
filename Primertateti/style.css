@@ -6,8 +6,18 @@ body{
     user-select: none;
 }
 
+@keyframes cambiaColor {
+    0% { color: red; }
+    25% { color: blue; }
+    50% { color: green; }
+    75% { color: orange; }
+    100% { color: purple; }
+}
+.cambiante {
+    animation: cambiaColor 4s linear infinite; /* La animación dura 4 segundos y se repite infinitamente */
+}
 h1{
-    color: aliceblue;
+    /*color: aliceblue;*/
     font-size: 50px;
    font-family: verdana ;
    
@@ -21,7 +31,7 @@ img{
     width: 600px;
     border-width: 5px;
     border-radius: 5%;
-    border-color: rgb(255, 255, 255);
+    animation: cambiaColor 4s linear infinite; 
     border-style: solid;
     justify-content: center;
 }
